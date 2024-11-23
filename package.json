@@ -2,7 +2,6 @@
   "name": "starter-ui-vue3",
   "type": "module",
   "version": "0.0.0",
-  "private": true,
   "packageManager": "pnpm@9.10.0",
   "description": "Vue 3 component library starter template, supports Typescript, import on demand, dark mode, I18n and SSR.",
   "author": "Kieran Wang <kieranwme@gmail.com> (https://github.com/kieranwv/)",
