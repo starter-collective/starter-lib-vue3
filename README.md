@@ -1,6 +1,6 @@
 # Vue 3 Component Library Starter Template
 
-[![Release Version](https://img.shields.io/github/v/release/starter-collective/starter-ui-vue3?style=flat&label=%20&color=%2309090b)](https://github.com/starter-collective/starter-ui-vue3/releases)
+[![Release Version](https://img.shields.io/github/v/release/starter-collective/starter-ui-vue3?style=flat&label=released&color=%2309090b)](https://github.com/starter-collective/starter-ui-vue3/releases)
 [![NPM Version](https://img.shields.io/npm/v/starter-ui-vue3?style=flat&label=npm&color=09090b)](https://www.npmjs.com/package/starter-ui-vue3)
 
 Vue 3 component library starter template, supports Typescript, import on demand, dark mode, I18n and SSR.
