@@ -1,0 +1,73 @@
+{
+  "name": "starter-ui-vue3",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.10.0",
+  "description": "Vue 3 component library starter template, supports Typescript, import on demand, dark mode, I18n and SSR.",
+  "author": "Kieran Wang <kieranwme@gmail.com> (https://github.com/kieranwv/)",
+  "license": "MIT",
+  "homepage": "https://github.com/starter-collective/starter-ui-vue3#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starter-collective/starter-ui-vue3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/starter-collective/starter-ui-vue3/issues"
+  },
+  "keywords": [
+    "ui",
+    "component",
+    "library",
+    "starter"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./*": "./*"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "unpkg": "./dist/index.global.js",
+  "jsdelivr": "./index.global.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "pnpm": ">=9.0"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "simple-git-hooks",
+    "test": "vitest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "vue-tsc --noEmit",
+    "clean": "rimraf dist",
+    "release": "bumpp && publish --access public"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.9.1",
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^18.19.64",
+    "bumpp": "^9.8.1",
+    "eslint": "^9.15.0",
+    "lint-staged": "^15.2.10",
+    "npm-run-all2": "^6.2.6",
+    "rimraf": "^6.0.1",
+    "simple-git-hooks": "^2.11.1"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "pnpm lint:fix"
+  }
+}
