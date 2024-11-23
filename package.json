@@ -48,7 +48,7 @@
     "lint:fix": "eslint . --fix",
     "typecheck": "vue-tsc --noEmit",
     "clean": "rimraf dist",
-    "release": "bumpp && publish --access public"
+    "release": "bumpp && pnpm publish"
   },
   "peerDependencies": {
     "vue": "^3.2.0"
