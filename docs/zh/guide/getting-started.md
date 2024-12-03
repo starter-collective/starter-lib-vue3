@@ -23,14 +23,18 @@ pnpm install starter-lib-vue3
 <script src="https://unpkg.com/starter-lib-vue3"></script>
 ```
 
-它将作为 `window.StarterLibTs` 暴露在全局对象中
+它将作为 `window.StarterLibVue3` 暴露在全局对象中
 
 ## 使用示例
 
-```js
-import { sayHello } from 'starter-lib-vue3'
+```vue
+<script setup>
+import { SayHello } from 'starter-lib-vue3'
+</script>
 
-sayHello('Kieran')
+<template>
+  <SayHello name="Kieran" />
+</template>
 ```
 
-更多详情请参考[函数列表](/functions/index)。
+更多详情请参考[组件列表](/components/index)。

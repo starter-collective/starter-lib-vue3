@@ -23,14 +23,18 @@ pnpm install starter-lib-vue3
 <script src="https://unpkg.com/starter-lib-vue3"></script>
 ```
 
-It will be exposed to global as `window.StarterLibTs`
+It will be exposed to global as `window.StarterLibVue3`
 
 ## Usage Example
 
-```js
-import { sayHello } from 'starter-lib-vue3'
+```vue
+<script setup>
+import { SayHello } from 'starter-lib-vue3'
+</script>
 
-sayHello('Kieran')
+<template>
+  <SayHello name="Kieran" />
+</template>
 ```
 
-Refer to [functions list](/functions/index) for more details.
+Refer to [component list](/components/index) for more details.
