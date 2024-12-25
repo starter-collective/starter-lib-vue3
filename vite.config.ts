@@ -1,4 +1,4 @@
-/// <reference types="vitest" />
+/// <reference types="vitest/config" />
 
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -17,7 +17,7 @@ export default defineConfig({
     // https://github.com/qmhc/vite-plugin-dts
     dts({
       tsconfigPath: 'tsconfig.json',
-      outDir: './dist/types',
+      outDir: './dist',
       entryRoot: './src',
       exclude: ['node_modules', 'tests', 'vite.config.ts'],
     }),
@@ -46,8 +46,7 @@ export default defineConfig({
       output: [
         {
           format: 'es',
-          dir: 'dist/es',
-          entryFileNames: '[name].js',
+          entryFileNames: 'index.js',
           exports: 'named',
           globals: {
             vue: 'Vue',
@@ -55,13 +54,11 @@ export default defineConfig({
         },
         {
           format: 'cjs',
-          dir: 'dist/lib',
-          entryFileNames: '[name].js',
+          entryFileNames: 'index.cjs',
         },
         {
           format: 'iife',
-          dir: 'dist/iife',
-          entryFileNames: 'index.js',
+          entryFileNames: 'index.global.js',
           name: 'StarterLibVue3',
         },
       ],
