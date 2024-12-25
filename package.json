@@ -1,7 +1,7 @@
 {
   "name": "starter-lib-vue3",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "packageManager": "pnpm@9.10.0",
   "description": "Vue 3 component library starter template, provides VitePress documentation, supports building ESM, CJS and IIFE formats. ",
   "author": "Kieran Wang <kieranwme@gmail.com> (https://github.com/kieranwv/)",
