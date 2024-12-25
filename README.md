@@ -4,6 +4,7 @@
 [![NPM Version](https://img.shields.io/npm/v/starter-lib-vue3?style=flat&label=npm&color=%42b883)](https://www.npmjs.com/package/starter-lib-vue3)
 [![Build Status](https://github.com/starter-collective/starter-lib-vue3/actions/workflows/ci.yml/badge.svg?branch=main&color=%42b883)](https://github.com/starter-collective/starter-lib-vue3/actions/workflows/ci.yml)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6b182d34-7d30-4206-aad9-9789d1c8ed11/deploy-status)](https://app.netlify.com/sites/starter-lib-vue3/deploys)
+
 Vue 3 component library starter template, provides VitePress documentation, supports building ESM, CJS and IIFE formats.
 
 - [Live Demo](https://starter-lib-vue3.netlify.app/)
@@ -70,7 +71,7 @@ pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
 
 When you use this template, try follow the checklist to update your info properly:
 
-- [ ] Change the package name in `package.json` and the global `iife` variable in `tsup.config.ts`.
+- [ ] Change the package name in `package.json` and the global `iife` variable in `vite.config.ts`.
 - [ ] Update the website information, favicon, and logo icons in `docs/*`.
 
 ## License
