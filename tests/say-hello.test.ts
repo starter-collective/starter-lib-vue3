@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
-import SayHello from '../src/SayHello.vue'
+import SayHello from '../src/components/SayHello.vue'
 
 describe('test for SayHello.vue', () => {
   it('renders a button', () => {

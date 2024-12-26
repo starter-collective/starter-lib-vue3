@@ -22,12 +22,14 @@ export default defineConfig({
       exclude: ['node_modules', 'tests', 'vite.config.ts'],
     }),
   ],
+
   // Vitest config.
   // https://github.com/vitest-dev/vitest
   test: {
     include: ['tests/**/*'],
     environment: 'jsdom',
   },
+
   // Build config.
   // Vite Library mode, read more: https://vite.dev/guide/build.html#library-mode
   // https://vitejs.dev/config/#build-options
