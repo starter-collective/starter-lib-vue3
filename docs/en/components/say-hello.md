@@ -2,14 +2,10 @@
 
 A demo component to use `starter-lib-vue3`.
 
-## Usage
+## Basic Usage
 
-```vue
-<script setup>
-import { SayHello } from 'starter-lib-vue3'
-</script>
+::: example
 
-<template>
-  <SayHello name="Kieran" />
-</template>
-```
+say-hello/basic
+
+:::

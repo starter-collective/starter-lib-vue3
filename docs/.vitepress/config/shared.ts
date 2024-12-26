@@ -1,4 +1,6 @@
 import { defineConfig } from 'vitepress'
+import { MarkdownPlugin } from '../plugins'
+import { GITHUB_URL, WEBSITE_URL } from './constants'
 
 export const shared = defineConfig({
   title: 'Vue3 Component Library Starter Template',
@@ -9,7 +11,7 @@ export const shared = defineConfig({
   cleanUrls: true,
   metaChunk: true,
   sitemap: {
-    hostname: 'https://starter-lib-vue3.netlify.app/',
+    hostname: WEBSITE_URL,
     transformItems(items) {
       return items.filter(item => !item.url.includes('migration'))
     },
@@ -23,18 +25,19 @@ export const shared = defineConfig({
     ['meta', { property: 'og:title', content: 'Vue3 Component Library Starter Template' }],
     ['meta', { property: 'og:site_name', content: 'Vue3 Component Library Starter Template' }],
     ['meta', { property: 'og:image', content: '/logo.png' }],
-    ['meta', { property: 'og:url', content: 'https://starter-lib-vue3.netlify.app/' }],
+    ['meta', { property: 'og:url', content: WEBSITE_URL }],
   ],
   themeConfig: {
     logo: '/logo.png',
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/starter-collective/starter-lib-vue3' },
+      { icon: 'github', link: GITHUB_URL },
     ],
     search: {
       provider: 'local',
     },
   },
   markdown: {
+    config: md => MarkdownPlugin(md),
     theme: {
       light: 'github-light',
       dark: 'github-dark',

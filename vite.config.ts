@@ -37,6 +37,7 @@ export default defineConfig({
     minify: true,
     lib: {
       entry: 'src/index.ts',
+      cssFileName: 'style',
     },
     rollupOptions: {
       external: [

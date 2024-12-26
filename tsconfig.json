@@ -1,14 +1,23 @@
 {
   "compilerOptions": {
     "target": "es2018",
-    "lib": ["esnext"],
+    "lib": [
+      "esnext"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
+    "paths": {
+      "starter-lib-vue3": [
+        "./src/index.ts"
+      ]
+    },
     "resolveJsonModule": true,
     "strict": true,
     "strictNullChecks": true,
     "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*.ts"]
+  "include": [
+    "src/**/*.ts"
+  ]
 }
