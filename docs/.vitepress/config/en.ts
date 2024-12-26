@@ -1,12 +1,13 @@
 import { defineConfig } from 'vitepress'
 import pkg from '../../../package.json'
+import { GITHUB_URL } from './constants'
 
 export const en = defineConfig({
   lang: 'en-US',
   description: 'Vue 3 component library starter template, provides VitePress documentation, supports building ESM, CJS and IIFE formats.',
   themeConfig: {
     editLink: {
-      pattern: 'https://github.com/starter-collective/starter-lib-vue3/edit/main/docs/:path',
+      pattern: `${GITHUB_URL}/edit/main/docs/:path`,
       text: 'Edit this page on GitHub',
     },
     nav: [
@@ -17,7 +18,7 @@ export const en = defineConfig({
         items: [
           {
             text: 'Changelog',
-            link: 'https://github.com/starter-collective/starter-lib-vue3/releases',
+            link: `${GITHUB_URL}/releases`,
           },
         ],
       },
@@ -39,6 +40,9 @@ export const en = defineConfig({
         ],
       },
     ],
+    lastUpdated: {
+      text: 'Last Updated',
+    },
     footer: {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2024-present Kieran Wang',

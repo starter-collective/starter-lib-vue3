@@ -32,37 +32,33 @@ export default defineConfig({
   // Vite Library mode, read more: https://vite.dev/guide/build.html#library-mode
   // https://vitejs.dev/config/#build-options
   build: {
-    emptyOutDir: false,
+    emptyOutDir: true,
     cssTarget: 'chrome61',
     minify: true,
     lib: {
       entry: 'src/index.ts',
+      name: 'StarterLibVue3',
+      formats: ['es', 'cjs', 'iife'],
+      fileName: (format) => {
+        if (format === 'es')
+          return `index.js`
+        if (format === 'cjs')
+          return `index.cjs`
+        if (format === 'iife')
+          return `index.global.js`
+        return `index.${format}.js`
+      },
       cssFileName: 'style',
     },
     rollupOptions: {
       external: [
         'vue',
       ],
-      input: 'src/index.ts',
-      output: [
-        {
-          format: 'es',
-          entryFileNames: 'index.js',
-          exports: 'named',
-          globals: {
-            vue: 'Vue',
-          },
+      output: {
+        globals: {
+          vue: 'Vue',
         },
-        {
-          format: 'cjs',
-          entryFileNames: 'index.cjs',
-        },
-        {
-          format: 'iife',
-          entryFileNames: 'index.global.js',
-          name: 'StarterLibVue3',
-        },
-      ],
+      },
     },
   },
 })

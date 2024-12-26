@@ -1,8 +1,9 @@
 <script setup lang="ts">
+/// <reference types="vite/client" />
 import { useClipboard } from '@vueuse/core'
 import { useData } from 'vitepress'
 import { computed, ref } from 'vue'
-import { GITHUB_EDIT_URL } from '../config/constants'
+import { GITHUB_URL } from '../config/constants'
 import ExampleComponent from './ExampleComponent.vue'
 import ExampleOperate from './ExampleOperate.vue'
 import ExampleSourceCode from './ExampleSourceCode.vue'
@@ -24,12 +25,12 @@ const props = defineProps({
 
 const { isDark } = useData()
 
-const components = import.meta.glob('../../examples/**/*.vue', { eager: true })
+const components: Record<string, { default: any }> = import.meta.glob('../../examples/**/*.vue', { eager: true })
 
 const pathComponents = computed(() => {
-  const _obj = {}
+  const _obj: Record<string, any> = {}
   Object.keys(components).forEach((key) => {
-    _obj[key.replace('../../components/', '').replace('.vue', '')]
+    _obj[key.replace('../../examples/', '').replace('.vue', '')]
       = components[key].default
   })
   return _obj
@@ -55,7 +56,7 @@ const path = computed(() => {
 })
 
 function openHandle() {
-  window.open(`${GITHUB_EDIT_URL}/docs/${path.value}`)
+  window.open(`${GITHUB_URL}/blob/main/docs/examples/${path.value}.vue`)
 }
 </script>
 

@@ -14,12 +14,6 @@ export default defineConfig({
   // Vite config.
   // https://vitejs.dev
   vite: {
-    resolve: {
-      conditions: ['dev'],
-      alias: {
-        'starter-lib-vue3': '/src/index.ts',
-      },
-    },
     server: {
       host: true,
       port: 9865,

@@ -2,14 +2,10 @@
 
 一个使用 `starter-lib-vue3` 的演示组件。
 
-## 用法
+## 基本用法
 
-```vue
-<script setup>
-import { SayHello } from 'starter-lib-vue3'
-</script>
+::: example
 
-<template>
-  <SayHello name="Kieran" />
-</template>
-```
+say-hello/basic
+
+:::

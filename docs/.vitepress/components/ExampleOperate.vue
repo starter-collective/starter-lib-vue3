@@ -1,16 +1,40 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { useData } from 'vitepress'
+import { computed, ref } from 'vue'
 
 const emit = defineEmits(['toggle', 'copy', 'open'])
 
+const { lang } = useData()
+
 const code = ref(false)
+
+const copy = ref(false)
+
+const codeText = computed(() => {
+  if (!code.value) {
+    return lang.value === 'en-US' ? 'Show Code' : '显示代码'
+  }
+  else {
+    return lang.value === 'en-US' ? 'Hide Code' : '隐藏代码'
+  }
+})
+
+const copyCodeText = computed(() => {
+  if (!copy.value) {
+    return lang.value === 'en-US' ? 'Copy Code' : '复制代码'
+  }
+  else {
+    return lang.value === 'en-US' ? 'Copied to clipboard' : '已复制到剪贴板'
+  }
+})
+
+const viewCodeText = computed(() => lang.value === 'en-US' ? 'View Source Code' : '查看源码')
 
 function toggleSourceCode() {
   code.value = !code.value
   emit('toggle')
 }
 
-const copy = ref(false)
 function copySourceCode() {
   copy.value = true
   setTimeout(() => {
@@ -26,7 +50,7 @@ function openSourceCode() {
 
 <template>
   <div class="example-operate">
-    <i class="icon" :title="!code ? '展示代码' : '隐藏代码'" @click="toggleSourceCode">
+    <i class="icon" :title="codeText" @click="toggleSourceCode">
       <svg v-if="!code" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
         <path
           fill="currentColor"
@@ -40,7 +64,7 @@ function openSourceCode() {
         />
       </svg>
     </i>
-    <i class="icon" :title="copy ? '已复制到剪贴板' : '复制代码'" @click="copySourceCode">
+    <i class="icon" :title="copyCodeText" @click="copySourceCode">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 32 32">
         <path
           fill="currentColor"
@@ -49,11 +73,11 @@ function openSourceCode() {
         <path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z" />
       </svg>
     </i>
-    <i class="icon" title="访问源码" @click="openSourceCode">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+    <i class="icon" :title="viewCodeText" @click="openSourceCode">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32">
         <path
-          fill="currentColor"
-          d="M5.544 2.673a1.549 1.549 0 0 1 1.8.097v.001c.246.198.426.466.515.769l1.446 4.428h5.39L16.14 3.54a1.54 1.54 0 0 1 .515-.769l.004-.004a1.554 1.554 0 0 1 1.795-.095l.002.001c.274.174.486.43.605.732l.004.01l2.473 6.451a5.45 5.45 0 0 1-1.813 6.303l-6.73 5.064h-.002a1.66 1.66 0 0 1-2 0l-6.731-5.065a5.452 5.452 0 0 1-1.806-6.294l2.48-6.469c.12-.302.333-.558.607-.732m.811 2.063L4.16 10.464c-.28.737-.337 1.604-.12 2.362c.217.755.671 1.42 1.295 1.896l6.66 5.01l6.653-5.005a3.65 3.65 0 0 0 1.308-1.904c.22-.76.159-1.638-.123-2.378l-2.189-5.71L16 9.769H8z"
+          fill="currentColor" fill-rule="evenodd"
+          d="M16 2a14 14 0 0 0-4.43 27.28c.7.13 1-.3 1-.67v-2.38c-3.89.84-4.71-1.88-4.71-1.88a3.7 3.7 0 0 0-1.62-2.05c-1.27-.86.1-.85.1-.85a2.94 2.94 0 0 1 2.14 1.45a3 3 0 0 0 4.08 1.16a2.93 2.93 0 0 1 .88-1.87c-3.1-.36-6.37-1.56-6.37-6.92a5.4 5.4 0 0 1 1.44-3.76a5 5 0 0 1 .14-3.7s1.17-.38 3.85 1.43a13.3 13.3 0 0 1 7 0c2.67-1.81 3.84-1.43 3.84-1.43a5 5 0 0 1 .14 3.7a5.4 5.4 0 0 1 1.44 3.76c0 5.38-3.27 6.56-6.39 6.91a3.33 3.33 0 0 1 .95 2.59v3.84c0 .46.25.81 1 .67A14 14 0 0 0 16 2"
         />
       </svg>
     </i>
@@ -83,7 +107,7 @@ function openSourceCode() {
   transition: all 0.3s ease-in-out;
 }
 
-.example-operate .icon:hover ::after {
+.example-operate .icon:hover::after {
   cursor: auto;
   content: attr(title);
   position: absolute;

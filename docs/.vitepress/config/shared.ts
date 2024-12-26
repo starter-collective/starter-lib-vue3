@@ -19,7 +19,7 @@ export const shared = defineConfig({
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }],
-    ['meta', { name: 'theme-color', content: '#FF057C' }],
+    ['meta', { name: 'theme-color', content: '#42b883' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'en' }],
     ['meta', { property: 'og:title', content: 'Vue3 Component Library Starter Template' }],
