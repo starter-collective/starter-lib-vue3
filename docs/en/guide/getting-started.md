@@ -1,5 +1,7 @@
 # Getting Started
 
+This section will help you set up and get started with `starter-lib-vue3`.
+
 ## Using Package Manager
 
 ::: code-group

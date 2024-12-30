@@ -1,5 +1,7 @@
 # 立即开始
 
+本节将帮助您设置并开始使用 `starter-lib-vue3`。
+
 ## 使用包管理器
 
 ::: code-group
