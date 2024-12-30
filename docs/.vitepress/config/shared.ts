@@ -8,7 +8,6 @@ export const shared = defineConfig({
     'en/:rest*': ':rest*',
   },
   lastUpdated: true,
-  cleanUrls: true,
   metaChunk: true,
   sitemap: {
     hostname: WEBSITE_URL,
