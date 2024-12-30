@@ -12,7 +12,7 @@ hero:
     width: 200px
   actions:
     - theme: brand
-      text: 开始使用
+      text: 立即开始
       link: /zh/guide/getting-started
     - theme: alt
       text: 源代码

@@ -12,7 +12,7 @@ hero:
     width: 200px
   actions:
     - theme: brand
-      text: Get Started
+      text: Getting Started
       link: /guide/getting-started
     - theme: alt
       text: Source Code

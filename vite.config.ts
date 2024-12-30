@@ -2,6 +2,7 @@
 
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import copy from 'rollup-plugin-copy'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 
@@ -20,6 +21,13 @@ export default defineConfig({
       outDir: './dist',
       entryRoot: './src',
       exclude: ['node_modules', 'tests', 'vite.config.ts'],
+    }),
+
+    copy({
+      targets: [
+        { src: './src/volar.d.ts', dest: 'dist' },
+      ],
+      hook: 'writeBundle',
     }),
   ],
 

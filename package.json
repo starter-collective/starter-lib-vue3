@@ -30,6 +30,7 @@
       "require": "./dist/index.cjs"
     },
     "./*": "./*",
+    "./volar": "./dist/volar.d.ts",
     "./style.css": "./dist/style.css"
   },
   "main": "dist/index.cjs",
@@ -78,6 +79,7 @@
     "markdown-it": "^14.1.0",
     "markdown-it-container": "^4.0.0",
     "rimraf": "^6.0.1",
+    "rollup-plugin-copy": "^3.5.0",
     "shiki": "^1.24.4",
     "simple-git-hooks": "^2.11.1",
     "typescript": "^5.7.2",

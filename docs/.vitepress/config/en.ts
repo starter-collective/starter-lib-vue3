@@ -29,7 +29,7 @@ export const en = defineConfig({
         collapsed: false,
         items: [
           { text: 'What is starter-lib-vue3?', link: '/guide/what-is' },
-          { text: 'Get Started', link: '/guide/getting-started' },
+          { text: 'Getting Started', link: '/guide/getting-started' },
         ],
       },
       {

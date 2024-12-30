@@ -72,6 +72,7 @@ pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
 When you use this template, try follow the checklist to update your info properly:
 
 - [ ] Change the package name in `package.json` and the global `iife` variable in `vite.config.ts`.
+- [ ] Change the import name in `src/volar.d.ts` for better TypeScript support.
 - [ ] Update the website information, favicon, and logo icons in `docs/*`.
 
 ## License

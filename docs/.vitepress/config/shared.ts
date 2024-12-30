@@ -35,6 +35,9 @@ export const shared = defineConfig({
     search: {
       provider: 'local',
     },
+    outline: {
+      level: [2, 3],
+    },
   },
   markdown: {
     config: md => MarkdownPlugin(md),

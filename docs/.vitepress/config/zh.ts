@@ -29,7 +29,7 @@ export const zh = defineConfig({
         collapsed: false,
         items: [
           { text: '什么是 starter-lib-vue3？', link: '/zh/guide/what-is' },
-          { text: '快速开始', link: '/zh/guide/getting-started' },
+          { text: '立即开始', link: '/zh/guide/getting-started' },
         ],
       },
       {
