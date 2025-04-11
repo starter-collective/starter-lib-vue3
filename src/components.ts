@@ -1,4 +1,4 @@
-import SayHello from './SayHello.vue'
+import SayHello from './say-hello'
 
 export const components = [
   SayHello,

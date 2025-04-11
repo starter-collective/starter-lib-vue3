@@ -1,7 +1,2 @@
-import SayHello from './components/SayHello.vue'
-
+export * from './components'
 export * from './resolver'
-
-export {
-  SayHello,
-}

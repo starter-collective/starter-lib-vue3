@@ -18,7 +18,13 @@ export default defineConfig({
     // https://github.com/qmhc/vite-plugin-dts
     dts({
       tsconfigPath: 'tsconfig.json',
-      outDir: './dist',
+      outDir: './dist/es',
+      entryRoot: './src',
+      exclude: ['node_modules', 'tests', 'vite.config.ts'],
+    }),
+    dts({
+      tsconfigPath: 'tsconfig.json',
+      outDir: './dist/lib',
       entryRoot: './src',
       exclude: ['node_modules', 'tests', 'vite.config.ts'],
     }),
@@ -47,30 +53,43 @@ export default defineConfig({
     emptyOutDir: true,
     cssTarget: 'chrome61',
     minify: true,
+    cssCodeSplit: true,
     lib: {
       entry: 'src/index.ts',
       name: 'StarterLibVue3',
-      formats: ['es', 'cjs', 'iife'],
-      fileName: (format) => {
-        if (format === 'es')
-          return `index.js`
-        if (format === 'cjs')
-          return `index.cjs`
-        if (format === 'iife')
-          return `index.global.js`
-        return `index.${format}.js`
-      },
-      cssFileName: 'style',
+      fileName: format => `index.${format}.js`,
     },
     rollupOptions: {
       external: [
         'vue',
       ],
-      output: {
-        globals: {
-          vue: 'Vue',
+      output: [
+        {
+          format: 'es',
+          entryFileNames: '[name].js',
+          exports: 'named',
+          preserveModules: true,
+          preserveModulesRoot: 'packages',
+          dir: './dist/es',
+          globals: {
+            vue: 'Vue',
+          },
         },
-      },
+        {
+          format: 'cjs',
+          entryFileNames: '[name].js',
+          exports: 'named',
+          preserveModules: true,
+          preserveModulesRoot: 'packages',
+          dir: './dist/lib',
+        },
+        {
+          format: 'iife',
+          entryFileNames: 'index.js',
+          name: 'StarterLibVue3',
+          dir: './dist/iife',
+        },
+      ],
     },
   },
 })
