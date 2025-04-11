@@ -1,5 +1,6 @@
+import { withInstall } from '../utils/install'
 import SayHello from './SayHello.vue'
 
-export const StSayHello = SayHello
+export const StSayHello = withInstall(SayHello)
 
-export default SayHello
+export default StSayHello
