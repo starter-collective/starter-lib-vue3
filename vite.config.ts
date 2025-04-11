@@ -2,9 +2,9 @@
 
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import copy from 'rollup-plugin-copy'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig({
   plugins: [
@@ -23,9 +23,11 @@ export default defineConfig({
       exclude: ['node_modules', 'tests', 'vite.config.ts'],
     }),
 
-    copy({
+    // Copy volar.d.ts to dist folder.
+    // https://github.com/sapphi-red/vite-plugin-static-copy
+    viteStaticCopy({
       targets: [
-        { src: './src/volar.d.ts', dest: 'dist' },
+        { src: './src/volar.d.ts', dest: './' },
       ],
       hook: 'writeBundle',
     }),
