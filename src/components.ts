@@ -1,7 +1,9 @@
-import SayHello from './say-hello'
+import StSayHello from './say-hello'
+
+export * from './say-hello'
 
 export const components = [
-  SayHello,
+  StSayHello,
 ]
 
 export default components
