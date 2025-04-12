@@ -1,8 +1,9 @@
-import { installer } from './installer'
+import { components } from './components'
+import { createInstaller } from './utils/installer'
 
 export * from './components'
 export * from './resolver'
 
-export const install = installer.install
+export const install = createInstaller(components)
 
-export default installer
+export default install

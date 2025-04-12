@@ -1,10 +1,9 @@
 import type { Plugin } from 'vue'
-import type { InstallOptions } from './utils/types'
-import { version } from '../package.json'
-import { components } from './components'
-import { provideGlobalConfig } from './utils/global-config'
+import type { InstallOptions } from './types'
+import { version } from '../../package.json'
+import { provideGlobalConfig } from './global-config'
 
-export const INSTALLED_KEY = Symbol('INSTALLED_KEY')
+export const INSTALLED_KEY = Symbol('STARTER_LIB_VUE3_INSTALLED_KEY')
 
 export function createInstaller(components: Plugin[] = []): { install: (app: any, options?: InstallOptions) => void, version: string } {
   const install = (app: any, options?: InstallOptions): void => {
@@ -23,7 +22,3 @@ export function createInstaller(components: Plugin[] = []): { install: (app: any
     version,
   }
 }
-
-export const installer = createInstaller(components)
-
-export default installer

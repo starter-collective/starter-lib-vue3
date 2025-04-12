@@ -69,7 +69,7 @@ export default defineConfig({
           entryFileNames: '[name].js',
           exports: 'named',
           preserveModules: true,
-          preserveModulesRoot: 'packages',
+          preserveModulesRoot: 'src',
           dir: './dist/es',
           globals: {
             vue: 'Vue',
@@ -80,7 +80,7 @@ export default defineConfig({
           entryFileNames: '[name].js',
           exports: 'named',
           preserveModules: true,
-          preserveModulesRoot: 'packages',
+          preserveModulesRoot: 'src',
           dir: './dist/lib',
         },
         {
