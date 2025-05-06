@@ -10,7 +10,7 @@ export function StarterLibVue3Resolver(): ComponentResolver {
           name,
           from: 'starter-lib-vue3',
           sideEffects: [
-            `starter-lib-vue3/dist/es/${toLowerCase(name.replace('St', ''))}/style.js`,
+            `starter-lib-vue3/dist/es/${toLowerCase(name.replace('St', ''))}/${name.replace('St', '')}.css`,
           ],
         }
       }
