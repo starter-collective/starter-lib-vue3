@@ -44,6 +44,40 @@ app.mount('#app')
 </template>
 ```
 
+### On-demand Manual Import
+
+You can manually import the components you need (components consist of logic files and style files):
+
+```ts
+// main.ts
+import { StSayHello } from 'starter-lib-vue3'
+import { createApp } from 'vue'
+import App from './App.vue'
+
+import 'starter-lib-vue3/dist/es/say-hello/SayHello.css'
+
+const app = createApp(App)
+
+app.use(StSayHello).mount('#app')
+```
+
+Or import and use in SFC:
+
+```vue
+<script>
+import { StSayHello } from 'starter-lib-vue3'
+import 'starter-lib-vue3/dist/es/say-hello/SayHello.css'
+
+export default {
+  components: { StSayHello },
+}
+</script>
+
+<template>
+  <StSayHello />
+</template>
+```
+
 ## Browser Direct Import
 
 You can use the global variable `StarterLibVue3` by importing directly through the browser's HTML `script` tag.

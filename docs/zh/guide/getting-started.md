@@ -44,6 +44,40 @@ app.mount('#app')
 </template>
 ```
 
+### 按需手动导入
+
+你可已手动导入你需要的组件（组件由逻辑文件和样式文件组成）：
+
+```ts
+// main.ts
+import { StSayHello } from 'starter-lib-vue3'
+import { createApp } from 'vue'
+import App from './App.vue'
+
+import 'starter-lib-vue3/dist/es/say-hello/SayHello.css'
+
+const app = createApp(App)
+
+app.use(StSayHello).mount('#app')
+```
+
+或者在 SFC 中导入使用：
+
+```vue
+<script>
+import { StSayHello } from 'starter-lib-vue3'
+import 'starter-lib-vue3/dist/es/say-hello/SayHello.css'
+
+export default {
+  components: { StSayHello },
+}
+</script>
+
+<template>
+  <StSayHello />
+</template>
+```
+
 ## 浏览器直接引入
 
 直接通过浏览器的 HTML `script` 标签导入就可以使用全局变量 `StarterLibVue3` 了。
