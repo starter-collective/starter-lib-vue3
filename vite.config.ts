@@ -71,9 +71,6 @@ export default defineConfig({
           preserveModules: true,
           preserveModulesRoot: 'src',
           dir: './dist/es',
-          globals: {
-            vue: 'Vue',
-          },
         },
         {
           format: 'cjs',
@@ -84,10 +81,14 @@ export default defineConfig({
           dir: './dist/lib',
         },
         {
-          format: 'iife',
+          format: 'umd',
           entryFileNames: 'index.js',
+          exports: 'named',
           name: 'StarterLibVue3',
-          dir: './dist/iife',
+          dir: './dist/umd',
+          globals: {
+            vue: 'Vue',
+          },
         },
       ],
     },
