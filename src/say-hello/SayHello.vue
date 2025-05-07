@@ -16,5 +16,5 @@ function sayHello() {
 </template>
 
 <style>
-@import url('./say-hello.css');
+@import url('./style.css');
 </style>

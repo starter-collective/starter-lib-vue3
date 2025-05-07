@@ -1,10 +1,12 @@
 /// <reference types="vitest/config" />
 
+import path from 'node:path'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
+import { vitePluginBundleStyles } from './external/vite-plugin-bundle-styles'
 
 export default defineConfig({
   plugins: [
@@ -37,6 +39,11 @@ export default defineConfig({
       ],
       hook: 'writeBundle',
     }),
+
+    // Transform styles from components.
+    vitePluginBundleStyles({
+      target: './src',
+    }),
   ],
 
   // Vitest config.
@@ -58,6 +65,7 @@ export default defineConfig({
       entry: 'src/index.ts',
       name: 'StarterLibVue3',
       fileName: format => `index.${format}.js`,
+      cssFileName: 'style',
     },
     rollupOptions: {
       external: [
@@ -71,6 +79,12 @@ export default defineConfig({
           preserveModules: true,
           preserveModulesRoot: 'src',
           dir: './dist/es',
+          assetFileNames: (assetInfo) => {
+            if (assetInfo.names && assetInfo.names.some(name => name.endsWith('.css'))) {
+              return path.join(path.dirname(assetInfo.names[0]), 'style.css')
+            }
+            return '[name].[ext]'
+          },
         },
         {
           format: 'cjs',
@@ -79,6 +93,12 @@ export default defineConfig({
           preserveModules: true,
           preserveModulesRoot: 'src',
           dir: './dist/lib',
+          assetFileNames: (assetInfo) => {
+            if (assetInfo.names && assetInfo.names.some(name => name.endsWith('.css'))) {
+              return path.join(path.dirname(assetInfo.names[0]), 'style.css')
+            }
+            return '[name].[ext]'
+          },
         },
         {
           format: 'umd',
@@ -88,6 +108,12 @@ export default defineConfig({
           dir: './dist/umd',
           globals: {
             vue: 'Vue',
+          },
+          assetFileNames: (assetInfo) => {
+            if (assetInfo.names && assetInfo.names.some(name => name.endsWith('.css'))) {
+              return path.join(path.dirname(assetInfo.names[0]), 'style.css')
+            }
+            return '[name].[ext]'
           },
         },
       ],
