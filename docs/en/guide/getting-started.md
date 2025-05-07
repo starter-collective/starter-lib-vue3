@@ -29,7 +29,7 @@ If you're not concerned about the final bundle size, using full import is more c
 import StarterLibVue3 from 'starter-lib-vue3'
 import { createApp } from 'vue'
 import App from './App.vue'
-import 'starter-lib-vue3/style.css'
+import 'starter-lib-vue3/style'
 
 const app = createApp(App)
 
@@ -93,7 +93,7 @@ Now you can directly use starter-lib-vue3 components in SFC files, and their sty
 <script>
 // No need to manually import :P
 // import { StSayHello } from 'starter-lib-vue3'
-// import 'starter-lib-vue3/dist/es/say-hello/SayHello.css'
+// import 'starter-lib-vue3/dist/es/say-hello/style.css'
 </script>
 
 <template>
@@ -108,7 +108,7 @@ You can manually import the components you need (components consist of logic fil
 ```vue
 <script>
 import { StSayHello } from 'starter-lib-vue3'
-import 'starter-lib-vue3/dist/es/say-hello/SayHello.css'
+import 'starter-lib-vue3/dist/es/say-hello/style.css'
 
 export default {
   components: { StSayHello },
@@ -138,14 +138,12 @@ Different CDN providers have different import methods. Here we use unpkg as an e
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>starter-lib-vue3</title>
-  <link rel="stylesheet" href="https://unpkg.com/starter-lib-vue3/dist/style.css">
 </head>
 
 <body>
   <div id="app"></div>
 
   <script src="https://unpkg.com/starter-lib-vue3"></script>
-  <script src="./wxdata-ui.umd.cjs"></script>
   <script>
     const app = Vue.createApp({
       template: '<StSayHello name="Kieran" />'

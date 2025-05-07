@@ -110,12 +110,6 @@ export default defineConfig({
           globals: {
             vue: 'Vue',
           },
-          assetFileNames: (assetInfo) => {
-            if (assetInfo.names && assetInfo.names.some(name => name.endsWith('.css'))) {
-              return path.join(path.dirname(assetInfo.names[0]), 'style.css')
-            }
-            return '[name].[ext]'
-          },
         },
       ],
     },
