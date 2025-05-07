@@ -4,9 +4,9 @@ import path from 'node:path'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { defineConfig } from 'vite'
+import { viteBundleStyles } from 'vite-plugin-bundle-styles'
 import dts from 'vite-plugin-dts'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
-import { vitePluginBundleStyles } from './external/vite-plugin-bundle-styles'
 
 export default defineConfig({
   plugins: [
@@ -40,8 +40,9 @@ export default defineConfig({
       hook: 'writeBundle',
     }),
 
-    // Transform styles from components.
-    vitePluginBundleStyles({
+    // Bundle styles from components.
+    // https://github.com/kieranwv/vite-plugin-bundle-styles
+    viteBundleStyles({
       target: './src',
     }),
   ],

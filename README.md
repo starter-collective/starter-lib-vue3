@@ -62,7 +62,7 @@ pnpm release
 If you prefer to do it manually with the cleaner git history:
 
 ```bash
-npx degit starter-collective/starter-lib-vue3
+npx degit starter-collective/starter-lib-vue3 starter-lib-vue3
 
 cd starter-lib-vue3
 
