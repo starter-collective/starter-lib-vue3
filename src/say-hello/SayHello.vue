@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+defineOptions({
+  name: 'StSayHello',
+})
+
 const { name } = defineProps<{
   name: string
 }>()

@@ -1,6 +1,6 @@
-declare module '@vue/runtime-core' {
+declare module 'vue' {
   export interface GlobalComponents {
-    SayHello: typeof import('starter-lib-vue3')['SayHello']
+    StSayHello: typeof import('starter-lib-vue3')['StSayHello']
   }
 }
 
