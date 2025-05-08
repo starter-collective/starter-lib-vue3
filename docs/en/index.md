@@ -5,7 +5,7 @@ layout: home
 hero:
   name: Vue3 Component Library Starter Template
   text: Provides VitePress documentation
-  tagline: Supports building ESM, CJS and IIFE formats.
+  tagline: Supports building ESM, CJS and UMD formats.
   image:
     src: /logo.png
     alt: Logo Image

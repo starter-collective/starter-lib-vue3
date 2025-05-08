@@ -5,7 +5,7 @@ layout: home
 hero:
   name: Vue 3 组件库启动模板
   text: 提供 VitePress 文档
-  tagline: 支持构建 ESM、CJS 和 IIFE 格式。
+  tagline: 支持构建 ESM、CJS 和 UMD 格式。
   image:
     src: /logo.png
     alt: Logo 图片

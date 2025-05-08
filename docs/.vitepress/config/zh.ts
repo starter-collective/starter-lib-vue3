@@ -4,7 +4,7 @@ import { GITHUB_URL } from './constants'
 
 export const zh = defineConfig({
   lang: 'zh-CN',
-  description: 'Vue 3 组件库启动模板，提供 VitePress 文档，支持构建 ESM、CJS 和 IIFE 格式。',
+  description: 'Vue 3 组件库启动模板，提供 VitePress 文档，支持构建 ESM、CJS 和 UMD 格式。',
   themeConfig: {
     editLink: {
       pattern: `${GITHUB_URL}/edit/main/docs/:path`,

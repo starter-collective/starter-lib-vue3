@@ -4,7 +4,7 @@ import { GITHUB_URL } from './constants'
 
 export const en = defineConfig({
   lang: 'en-US',
-  description: 'Vue 3 component library starter template, provides VitePress documentation, supports building ESM, CJS and IIFE formats.',
+  description: 'Vue 3 component library starter template, provides VitePress documentation, supports building ESM, CJS and UMD formats.',
   themeConfig: {
     editLink: {
       pattern: `${GITHUB_URL}/edit/main/docs/:path`,
