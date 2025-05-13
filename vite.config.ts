@@ -59,7 +59,6 @@ export default defineConfig({
   // https://vitejs.dev/config/#build-options
   build: {
     emptyOutDir: true,
-    cssTarget: 'chrome61',
     minify: true,
     cssCodeSplit: true,
     lib: {
