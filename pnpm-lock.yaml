@@ -11,6 +11,9 @@ importers:
       '@antfu/eslint-config':
         specifier: ^4.13.0
         version: 4.13.0(@typescript-eslint/utils@8.32.0(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3))(@vue/compiler-sfc@3.5.13)(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3)(vitest@3.1.3(@types/debug@4.1.12)(@types/node@22.15.14)(jiti@2.4.2)(jsdom@26.1.0)(yaml@2.7.1))
+      '@kieranwv/utils':
+        specifier: ^0.3.0
+        version: 0.3.0
       '@types/jsdom':
         specifier: ^21.1.7
         version: 21.1.7
@@ -812,6 +815,10 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
+
+  '@kieranwv/utils@0.3.0':
+    resolution: {integrity: sha512-WQJxTTkNCp7PjF6PNbZ8pqaRln4VemQdglHlKQO39/52EjTIpLk0NA/aE5Z+P8of31sYKJvZQktw68EZuV2vNw==}
+    engines: {pnpm: '>=9.0'}
 
   '@microsoft/api-extractor-model@7.30.6':
     resolution: {integrity: sha512-znmFn69wf/AIrwHya3fxX6uB5etSIn6vg4Q4RB/tb5VDDs1rqREc+AvMC/p19MUN13CZ7+V/8pkYPTj7q8tftg==}
@@ -4693,6 +4700,8 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  '@kieranwv/utils@0.3.0': {}
 
   '@microsoft/api-extractor-model@7.30.6(@types/node@22.15.14)':
     dependencies:

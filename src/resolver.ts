@@ -1,5 +1,5 @@
 import type { ComponentResolver } from 'unplugin-vue-components'
-import { toLowerCase } from './utils/format'
+import { toLowerCase } from '@kieranwv/utils'
 
 export function StarterLibVue3Resolver(): ComponentResolver {
   return {

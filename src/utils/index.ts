@@ -1,3 +1,3 @@
-export * from './format'
+export * from './installer'
 export * from './types'
 export * from './with-install'
